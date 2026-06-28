@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:lottie/lottie.dart';
-import '../l10n/app_localizations.dart';
-import '../utils/theme.dart';
-import 'main_screen.dart';
+import 'package:netguard_pro/l10n/app_localizations.dart';
+import 'package:netguard_pro/utils/theme.dart';
+import 'package:netguard_pro/screens/main_screen.dart';
 
 class OnboardingScreen extends StatefulWidget {
   const OnboardingScreen({super.key});

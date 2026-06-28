@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../l10n/app_localizations.dart';
-import '../services/local/ping_service.dart';
-import '../providers/history_provider.dart';
-import '../utils/theme.dart';
+import 'package:netguard_pro/l10n/app_localizations.dart';
+import 'package:netguard_pro/services/local/ping_service.dart';
+import 'package:netguard_pro/providers/history_provider.dart';
+import 'package:netguard_pro/utils/theme.dart';
 
 class PingScreen extends StatefulWidget {
   const PingScreen({super.key});

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../l10n/app_localizations.dart';
-import '../services/local/network_discovery.dart';
-import '../providers/history_provider.dart';
-import '../utils/theme.dart';
-import '../widgets/charts/network_map.dart';
+import 'package:netguard_pro/l10n/app_localizations.dart';
+import 'package:netguard_pro/services/local/network_discovery.dart';
+import 'package:netguard_pro/providers/history_provider.dart';
+import 'package:netguard_pro/utils/theme.dart';
+import 'package:netguard_pro/widgets/charts/network_map.dart';
 
 class NetworkMapScreen extends StatefulWidget {
   const NetworkMapScreen({super.key});

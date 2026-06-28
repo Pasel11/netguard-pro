@@ -1,3 +1,4 @@
+import '../providers/history_provider.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';
@@ -128,4 +129,3 @@ class HiveService {
 }
 
 // import مبكر لـ ScanHistoryItem
-import '../providers/history_provider.dart';
