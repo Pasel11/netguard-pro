@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../l10n/app_localizations.dart';
-import '../../services/security/dns_leak_test.dart';
-import '../../services/security/webrtc_leak_test.dart';
-import '../../services/security/captive_firewall.dart';
-import '../../providers/history_provider.dart';
-import '../../utils/theme.dart';
+import 'package:netguard_pro/l10n/app_localizations.dart';
+import 'package:netguard_pro/services/security/dns_leak_test.dart';
+import 'package:netguard_pro/services/security/webrtc_leak_test.dart';
+import 'package:netguard_pro/services/security/captive_firewall.dart';
+import 'package:netguard_pro/providers/history_provider.dart';
+import 'package:netguard_pro/utils/theme.dart';
 
 /// شاشة موحدة لكشف كل أنواع التسريبات
 class LeakDetectionScreen extends StatefulWidget {

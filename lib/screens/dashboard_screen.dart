@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:shimmer/shimmer.dart';
 
-import '../l10n/app_localizations.dart';
-import '../models/models.dart';
-import '../services/api_service.dart';
-import '../utils/theme.dart';
+import 'package:netguard_pro/l10n/app_localizations.dart';
+import 'package:netguard_pro/models/models.dart';
+import 'package:netguard_pro/services/api_service.dart';
+import 'package:netguard_pro/utils/theme.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});

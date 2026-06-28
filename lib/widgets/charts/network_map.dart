@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
-import '../services/local/network_discovery.dart';
-import '../utils/theme.dart';
+import 'package:netguard_pro/services/local/network_discovery.dart';
+import 'package:netguard_pro/utils/theme.dart';
 
 /// رسم بياني تفاعلي للشبكة
 class NetworkMapWidget extends StatefulWidget {

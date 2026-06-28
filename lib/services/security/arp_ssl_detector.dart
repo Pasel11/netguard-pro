@@ -1,6 +1,6 @@
 import 'dart:io';
 import 'dart:async';
-import '../local/network_discovery.dart';
+import 'package:netguard_pro/services/local/network_discovery.dart';
 
 /// كاشف تسمم ARP (ARP Poisoning / ARP Spoofing)
 /// 

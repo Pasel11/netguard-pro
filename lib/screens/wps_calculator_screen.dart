@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
-import '../l10n/app_localizations.dart';
-import '../models/models.dart';
-import '../services/api_service.dart';
-import '../providers/premium_provider.dart';
-import '../providers/history_provider.dart';
-import '../utils/theme.dart';
-import '../widgets/custom/glass_card.dart';
-import '../widgets/custom/score_indicator.dart';
+import 'package:netguard_pro/l10n/app_localizations.dart';
+import 'package:netguard_pro/models/models.dart';
+import 'package:netguard_pro/services/api_service.dart';
+import 'package:netguard_pro/providers/premium_provider.dart';
+import 'package:netguard_pro/providers/history_provider.dart';
+import 'package:netguard_pro/utils/theme.dart';
+import 'package:netguard_pro/widgets/custom/glass_card.dart';
+import 'package:netguard_pro/widgets/custom/score_indicator.dart';
 
 class WPSCalculatorScreen extends StatefulWidget {
   const WPSCalculatorScreen({super.key});

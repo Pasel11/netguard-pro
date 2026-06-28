@@ -3,12 +3,12 @@ import 'package:pdf/pdf.dart';
 import 'package:pdf/widgets.dart' as pw;
 import 'package:path_provider/path_provider.dart';
 import 'package:share_plus/share_plus.dart';
-import '../models/models.dart';
-import '../services/local/port_scanner.dart';
-import '../services/local/network_discovery.dart';
-import '../services/local/dns_service.dart';
-import '../services/local/ping_service.dart';
-import '../services/local/ssl_scanner.dart';
+import 'package:netguard_pro/models/models.dart';
+import 'package:netguard_pro/services/local/port_scanner.dart';
+import 'package:netguard_pro/services/local/network_discovery.dart';
+import 'package:netguard_pro/services/local/dns_service.dart';
+import 'package:netguard_pro/services/local/ping_service.dart';
+import 'package:netguard_pro/services/local/ssl_scanner.dart';
 
 /// خدمة تصدير التقارير بصيغ متعددة
 class ExportService {

@@ -1,4 +1,4 @@
-import '../providers/history_provider.dart';
+import 'package:netguard_pro/providers/history_provider.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert';

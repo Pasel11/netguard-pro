@@ -3,12 +3,12 @@ import 'package:provider/provider.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../l10n/app_localizations.dart';
-import '../providers/theme_provider.dart';
-import '../providers/locale_provider.dart';
-import '../providers/premium_provider.dart';
-import '../providers/history_provider.dart';
-import '../utils/theme.dart';
+import 'package:netguard_pro/l10n/app_localizations.dart';
+import 'package:netguard_pro/providers/theme_provider.dart';
+import 'package:netguard_pro/providers/locale_provider.dart';
+import 'package:netguard_pro/providers/premium_provider.dart';
+import 'package:netguard_pro/providers/history_provider.dart';
+import 'package:netguard_pro/utils/theme.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});

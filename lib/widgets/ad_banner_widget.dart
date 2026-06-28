@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-import '../services/ads_service.dart';
-import '../l10n/app_localizations.dart';
-import '../utils/theme.dart';
+import 'package:netguard_pro/services/ads_service.dart';
+import 'package:netguard_pro/l10n/app_localizations.dart';
+import 'package:netguard_pro/utils/theme.dart';
 
 class AdBannerWidget extends StatefulWidget {
   const AdBannerWidget({super.key});

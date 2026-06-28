@@ -27,13 +27,7 @@ class AdsService {
       // Initialize Google Mobile Ads
       await MobileAds.instance.initialize();
       
-      // Initialize Unity Ads
       // Unity Ads removed - not available on pub.dev
-        gameId: _unityGameId,
-        testMode: kDebugMode,
-        onComplete: () => debugPrint('Unity Ads initialized'),
-        onFailed: (error, message) => debugPrint('Unity Ads failed: $error - $message'),
-      );
       
       _initialized = true;
     } catch (e) {

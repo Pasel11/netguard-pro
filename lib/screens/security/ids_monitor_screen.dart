@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../l10n/app_localizations.dart';
-import '../../services/security/intrusion_detection.dart';
-import '../../utils/theme.dart';
+import 'package:netguard_pro/l10n/app_localizations.dart';
+import 'package:netguard_pro/services/security/intrusion_detection.dart';
+import 'package:netguard_pro/utils/theme.dart';
 
 class IdsMonitorScreen extends StatefulWidget {
   const IdsMonitorScreen({super.key});

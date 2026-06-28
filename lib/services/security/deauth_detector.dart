@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'dart:io';
-import '../local/network_discovery.dart';
+import 'package:netguard_pro/services/local/network_discovery.dart';
 
 /// كاشف هجمات Deauthentication
 /// يكتشف محاولات قطع أجهزة عن شبكة WiFi

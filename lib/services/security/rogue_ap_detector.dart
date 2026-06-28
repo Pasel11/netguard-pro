@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'dart:async';
-import '../local/network_discovery.dart';
-import '../local/wifi_info_service.dart';
+import 'package:netguard_pro/services/local/network_discovery.dart';
+import 'package:netguard_pro/services/local/wifi_info_service.dart';
 
 /// كاشف نقاط الوصول المزيفة (Rogue Access Point)
 /// 

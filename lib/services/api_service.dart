@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'package:dio/dio.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
-import '../models/models.dart';
-import '../storage/hive_service.dart';
+import 'package:netguard_pro/models/models.dart';
+import 'package:netguard_pro/storage/hive_service.dart';
 
 enum ApiErrorType {
   network,

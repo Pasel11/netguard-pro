@@ -1,5 +1,5 @@
 import 'package:flutter/foundation.dart';
-import '../storage/hive_service.dart';
+import 'package:netguard_pro/storage/hive_service.dart';
 
 class ScanHistoryItem {
   final String id;

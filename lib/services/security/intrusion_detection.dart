@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:io';
-import '../local/network_discovery.dart';
-import '../local/wifi_info_service.dart';
+import 'package:netguard_pro/services/local/network_discovery.dart';
+import 'package:netguard_pro/services/local/wifi_info_service.dart';
 
 /// نظام كشف التسلل (Intrusion Detection System)
 /// يراقب الشبكة بحثاً عن أنشطة مشبوهة

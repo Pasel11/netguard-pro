@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import '../l10n/app_localizations.dart';
-import '../models/models.dart';
-import '../services/api_service.dart';
-import '../utils/theme.dart';
+import 'package:netguard_pro/l10n/app_localizations.dart';
+import 'package:netguard_pro/models/models.dart';
+import 'package:netguard_pro/services/api_service.dart';
+import 'package:netguard_pro/utils/theme.dart';
 
 class RouterDetectorScreen extends StatefulWidget {
   const RouterDetectorScreen({super.key});

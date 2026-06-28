@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../l10n/app_localizations.dart';
-import '../services/ads_service.dart';
-import '../widgets/ad_banner_widget.dart';
-import '../utils/theme.dart';
+import 'package:netguard_pro/l10n/app_localizations.dart';
+import 'package:netguard_pro/services/ads_service.dart';
+import 'package:netguard_pro/widgets/ad_banner_widget.dart';
+import 'package:netguard_pro/utils/theme.dart';
 import 'dashboard_screen.dart';
 import 'port_scanner_screen.dart';
 import 'wps_calculator_screen.dart';
