@@ -50,7 +50,7 @@ dependencies:
   pdf: ^3.10.7
   printing: ^5.11.2
   share_plus: ^7.2.1
-  path_provider: ^2.1.1
+  # path_provider is already declared above in Local Storage section
   
   # ===== Ads =====
   google_mobile_ads: ^4.0.0
