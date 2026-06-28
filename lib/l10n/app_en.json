@@ -1,0 +1,259 @@
+{
+  "app_name": "NetGuard Pro",
+  "app_tagline": "Network Security Audit Tool",
+  
+  "nav": {
+    "dashboard": "Dashboard",
+    "ports": "Port Scanner",
+    "wps": "WPS Calculator",
+    "password": "Password",
+    "cve": "Vulnerabilities",
+    "router": "Router Detect",
+    "devices": "Devices",
+    "signal": "Signal Analyzer",
+    "report": "Security Report"
+  },
+  
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "scan": "Scan",
+    "detect": "Detect",
+    "analyze": "Analyze",
+    "generate": "Generate",
+    "download": "Download",
+    "language": "العربية",
+    "retry": "Retry"
+  },
+  
+  "legal": {
+    "warning_title": "Legal Notice",
+    "warning": "Use this tool only on your own network or with explicit permission from the owner. Unauthorized scanning of others' networks is illegal."
+  },
+  
+  "dashboard": {
+    "title": "Network Security Dashboard",
+    "system_active": "System Active",
+    "connected": "Connected",
+    "disconnected": "Offline",
+    "public_ip": "Public IP",
+    "download_speed": "Download",
+    "latency": "Latency",
+    "isp": "ISP",
+    "geographic_info": "Geographic Information",
+    "country": "Country",
+    "city": "City",
+    "timezone": "Timezone",
+    "security_score": "Connection Security Score",
+    "start_scan": "Start Security Scan",
+    "scanning": "Scanning...",
+    "quick_actions": "Quick Actions",
+    "secure": "Secure",
+    "medium": "Medium",
+    "weak": "Weak"
+  },
+  
+  "ports": {
+    "title": "Port Scanner",
+    "target_ip": "Target IP Address",
+    "start_scan": "Start Scan",
+    "scan_progress": "Scan Progress",
+    "open": "Open",
+    "closed": "Closed",
+    "total": "Total",
+    "security_score": "Target Security Score",
+    "risks": "Detected Risks",
+    "recommendations": "Security Recommendations",
+    "scan_time": "Scan Time"
+  },
+  
+  "wps": {
+    "title": "WPS PIN Calculator",
+    "subtitle": "Calculate expected WPS PIN for popular routers",
+    "mac_address": "MAC Address",
+    "mac_placeholder": "AA:BB:CC:DD:EE:FF",
+    "calculate": "Calculate PIN",
+    "calculated_pins": "Calculated PINs",
+    "algorithm": "Algorithm",
+    "vulnerability": "Vulnerability Level",
+    "exploit_time": "Exploit Time",
+    "protection": "How to Protect Yourself",
+    "detected_vendor": "Detected Vendor",
+    "matching_algorithm": "Matching Algorithm",
+    "expected_pin": "Expected WPS PIN"
+  },
+  
+  "password": {
+    "title": "WiFi Password Analyzer",
+    "enter_password": "Type your password here...",
+    "analyze": "Analyze",
+    "generate_strong": "Generate Strong Password",
+    "strength_score": "Strength Score",
+    "very_weak": "Very Weak",
+    "weak": "Weak",
+    "fair": "Fair",
+    "strong": "Strong",
+    "very_strong": "Very Strong",
+    "length": "Length",
+    "entropy": "Entropy",
+    "crack_time": "Estimated Time to Crack",
+    "online_attack": "Online Attack",
+    "offline_attack": "Offline Attack (GPU)",
+    "wpa_compatible": "WPA2/WPA3 Compatible",
+    "issues": "Detected Issues",
+    "suggestions": "Improvement Suggestions"
+  },
+  
+  "cve": {
+    "title": "Router Vulnerability Database",
+    "total": "Total CVEs",
+    "critical": "Critical",
+    "high": "High",
+    "vendor": "Vendor",
+    "select_vendor": "Select vendor",
+    "model": "Model",
+    "search": "Search Vulnerabilities",
+    "show_all": "Show All",
+    "affected_versions": "Affected Versions",
+    "publish_date": "Published",
+    "solution": "Solution"
+  },
+  
+  "router": {
+    "title": "Router Detector",
+    "router_ip": "Router IP Address",
+    "detect": "Detect",
+    "detected": "Detected",
+    "not_detected": "Not Detected",
+    "model": "Model",
+    "firmware": "Firmware",
+    "security_headers": "Security Headers",
+    "notes": "Security Notes"
+  },
+  
+  "devices": {
+    "title": "Network Devices Scanner",
+    "scan_network": "Scan Network",
+    "found": "Discovered Devices",
+    "ip": "IP",
+    "mac": "MAC",
+    "vendor": "Vendor",
+    "type": "Type",
+    "unknown": "Unknown"
+  },
+  
+  "signal": {
+    "title": "WiFi Signal Analyzer",
+    "subtitle": "Analyze WiFi signal strength and channels",
+    "signal_quality": "Signal Quality",
+    "signal_strength": "Signal Strength",
+    "channel": "Channel",
+    "frequency": "Frequency",
+    "network_type": "Network Type",
+    "downlink": "Downlink",
+    "recommendation": "Recommendation",
+    "tips": "Signal Improvement Tips",
+    "analyze": "Start Analysis"
+  },
+  
+  "report": {
+    "title": "Security Report Generator",
+    "subtitle": "Comprehensive security audit report",
+    "generate": "Generate Report",
+    "summary": "Report Summary",
+    "final_score": "Final Score",
+    "total_vulns": "Total Vulnerabilities",
+    "open_ports": "Open Ports",
+    "recommendations_count": "Recommendations",
+    "download_pdf": "Download PDF",
+    "conclusion": "Conclusion"
+  },
+  
+  "ads": {
+    "sponsored": "Sponsored",
+    "loading_ad": "Loading ad...",
+    "watch_ad_for": "Watch ad for",
+    "remove_ads": "Remove Ads"
+  },
+  
+  "onboarding": {
+    "welcome_title": "Welcome to NetGuard Pro",
+    "welcome_desc": "Professional tool for WiFi security audit - make your network safer today",
+    "features_title": "9 Powerful Tools",
+    "features_desc": "Port scanner, WPS PIN calculator, password analyzer, vulnerability detection, and more",
+    "legal_title": "Responsible Use",
+    "legal_desc": "Use this app only on your own network. Unauthorized use is illegal"
+  },
+  
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "scan": "Scan",
+    "detect": "Detect",
+    "analyze": "Analyze",
+    "generate": "Generate",
+    "download": "Download",
+    "language": "العربية",
+    "retry": "Retry",
+    "back": "Back",
+    "next": "Next",
+    "skip": "Skip",
+    "get_started": "Get Started",
+    "share": "Share",
+    "copy_pin": "Copy PIN",
+    "confirm": "Confirm"
+  },
+  
+  "settings": {
+    "appearance": "Appearance",
+    "theme": "Theme",
+    "dark": "Dark",
+    "light": "Light",
+    "system": "System",
+    "language": "Language",
+    "arabic": "العربية",
+    "english": "English",
+    "security": "Security",
+    "notifications": "Notifications",
+    "biometric_lock": "Biometric Lock",
+    "data": "Data",
+    "scan_history": "Scan History",
+    "scans": "scans",
+    "clear_cache": "Clear Cache",
+    "clear_cache_confirm": "Clear all cached data?",
+    "cache_cleared": "Cache cleared",
+    "clear_history": "Clear History",
+    "clear_history_confirm": "Delete all scan history? This cannot be undone.",
+    "history_cleared": "History cleared",
+    "about": "About",
+    "version": "Version",
+    "open_source": "Open Source",
+    "privacy_policy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "premium_active": "Premium Active",
+    "thank_you": "Thank you for your support!",
+    "upgrade_premium": "Upgrade to Premium",
+    "premium_benefits": "Unlock all advanced features, unlimited scans, no ads",
+    "start_trial": "Start 7-day trial",
+    "buy_now": "Buy Now",
+    "upgrade": "Upgrade"
+  },
+  
+  "history": {
+    "title": "Scan History",
+    "empty": "No scans yet",
+    "empty_desc": "Start scanning your network and results will appear here"
+  },
+  
+  "wps": {
+    "mac_hint": "Find your router's MAC on the device label or settings page",
+    "premium_required": "Some features require Premium",
+    "all_algorithms_premium": "All Algorithms",
+    "unlock_all": "Unlock all 8 algorithms with Premium",
+    "algorithms": "algorithms"
+  }
+}

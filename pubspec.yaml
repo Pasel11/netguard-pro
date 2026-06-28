@@ -1,0 +1,127 @@
+name: netguard_pro
+description: Professional Network Security Audit Tool | أداة فحص أمان الشبكات الاحترافية
+version: 4.0.0+1
+
+environment:
+  sdk: '>=3.2.0 <4.0.0'
+  flutter: '>=3.16.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  
+  # ===== State Management =====
+  provider: ^6.1.1
+  
+  # ===== Network & Local Services =====
+  http: ^1.1.0
+  dio: ^5.4.0
+  connectivity_plus: ^5.0.2
+  network_info_plus: ^4.1.0
+  device_info_plus: ^9.1.1
+  
+  # ===== Local Storage =====
+  shared_preferences: ^2.2.2
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  path_provider: ^2.1.1
+  
+  # ===== UI Components =====
+  cupertino_icons: ^1.0.6
+  flutter_svg: ^2.0.9
+  google_fonts: ^6.1.0
+  flutter_spinkit: ^5.2.0
+  shimmer: ^3.0.0
+  fl_chart: ^0.66.0
+  cached_network_image: ^3.3.0
+  flutter_staggered_animations: ^1.1.1
+  auto_size_text: ^3.0.0
+  animated_text_kit: ^4.2.2
+  smooth_page_indicator: ^1.1.0
+  
+  # ===== Utils =====
+  intl: ^0.18.1
+  uuid: ^4.2.1
+  logger: ^2.0.2+1
+  
+  # ===== PDF & Sharing =====
+  pdf: ^3.10.7
+  printing: ^5.11.2
+  share_plus: ^7.2.1
+  path_provider: ^2.1.1
+  
+  # ===== Ads =====
+  google_mobile_ads: ^4.0.0
+  unity_ads_plugin: ^0.0.7
+  
+  # ===== In-App Purchase =====
+  in_app_purchase: ^3.1.11
+  
+  # ===== Notifications =====
+  flutter_local_notifications: ^16.3.0
+  awesome_notifications: ^0.8.2
+  
+  # ===== Permissions & Info =====
+  permission_handler: ^11.1.0
+  device_info_plus: ^9.1.1
+  network_info_plus: ^4.1.0
+  package_info_plus: ^5.0.1
+  
+  # ===== URL Launcher =====
+  url_launcher: ^6.2.2
+  
+  # ===== Security =====
+  flutter_secure_storage: ^9.0.0
+  
+  # ===== Animation =====
+  lottie: ^2.7.0
+  
+  # ===== Badges & Tooltips =====
+  badges: ^3.1.2
+  
+  # ===== Pull to Refresh =====
+  pull_to_refresh_flutter3: ^2.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.1
+  flutter_launcher_icons: ^0.13.1
+  hive_generator: ^2.0.1
+  build_runner: ^2.4.7
+  mockito: ^5.4.3
+  integration_test:
+    sdk: flutter
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icons/app_icon.png"
+  min_sdk_android: 21
+
+flutter:
+  uses-material-design: true
+  
+  assets:
+    - assets/icons/
+    - assets/images/
+    - assets/animations/
+    - lib/l10n/
+  
+  fonts:
+    - family: Cairo
+      fonts:
+        - asset: assets/fonts/Cairo-Regular.ttf
+        - asset: assets/fonts/Cairo-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Cairo-SemiBold.ttf
+          weight: 600
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/Inter-Regular.ttf
+        - asset: assets/fonts/Inter-Bold.ttf
+          weight: 700
+  
+  generate: true

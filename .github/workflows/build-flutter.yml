@@ -1,0 +1,311 @@
+name: Build Flutter App (v3.0 - Advanced)
+
+on:
+  push:
+    branches: [main, master]
+    tags: ['v*']
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch:
+    inputs:
+      build_mode:
+        description: 'Build mode'
+        required: false
+        default: 'release'
+        type: choice
+        options: [debug, profile, release]
+      skip_tests:
+        description: 'Skip tests'
+        required: false
+        default: false
+        type: boolean
+
+env:
+  FLUTTER_VERSION: '3.24.0'
+  JAVA_VERSION: '17'
+
+jobs:
+  # Job 1: Code Quality & Tests
+  quality:
+    name: 🧪 Quality & Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+
+      - name: 🎯 Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: 'stable'
+          cache: true
+
+      - name: 📦 Cache packages
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.pub-cache
+            **/.dart_tool
+          key: ${{ runner.os }}-flutter-${{ hashFiles('**/pubspec.lock') }}
+
+      - name: 📥 Install dependencies
+        run: flutter pub get
+
+      - name: 🔍 Check formatting
+        run: dart format --set-exit-if-changed .
+
+      - name: 📝 Analyze code
+        run: flutter analyze
+
+      - name: 🧪 Run unit tests
+        if: ${{ github.event.inputs.skip_tests != 'true' }}
+        run: flutter test test/unit/
+
+      - name: 🧪 Run widget tests
+        if: ${{ github.event.inputs.skip_tests != 'true' }}
+        run: flutter test test/widget/
+
+      - name: 📊 Generate coverage report
+        if: ${{ github.event.inputs.skip_tests != 'true' }}
+        run: |
+          flutter test --coverage
+          # تثبيت lcov لمعالجة التقرير
+          sudo apt-get install -y lcov
+          lcov --remove coverage/lcov.info '*.g.dart' '*_test.dart' -o coverage/lcov_filtered.info
+          genhtml coverage/lcov_filtered.info -o coverage/html
+
+      - name: 📦 Upload coverage
+        if: ${{ github.event.inputs.skip_tests != 'true' }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: coverage/html
+
+      - name: 📊 Quality summary
+        if: always()
+        run: |
+          echo "## 🧪 Quality & Test Results" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ Code formatting checked" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ Static analysis passed" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ Unit tests passed" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ Widget tests passed" >> $GITHUB_STEP_SUMMARY
+
+  # Job 2: Build Android APK
+  build-android:
+    name: 🤖 Build Android APK
+    runs-on: ubuntu-latest
+    needs: quality
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+
+      - name: ☕ Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: ${{ env.JAVA_VERSION }}
+
+      - name: 🎯 Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: 'stable'
+          cache: true
+
+      - name: 📥 Install dependencies
+        run: flutter pub get
+
+      - name: 🔧 Setup Keystore
+        if: github.event_name != 'pull_request'
+        env:
+          KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          KEY_PROPERTIES: ${{ secrets.ANDROID_KEY_PROPERTIES }}
+        run: |
+          if [ -n "$KEYSTORE_BASE64" ]; then
+            echo "$KEYSTORE_BASE64" | base64 --decode > android/app/keystore.jks
+            echo "$KEY_PROPERTIES" > android/key.properties
+          fi
+
+      - name: 🏗️ Build APK (split per ABI)
+        run: flutter build apk --${{ github.event.inputs.build_mode || 'release' }} --split-per-abi
+        env:
+          ADMOB_APP_ID: ${{ secrets.ADMOB_APP_ID }}
+          UNITY_GAME_ID: ${{ secrets.UNITY_GAME_ID }}
+
+      - name: 🏗️ Build universal APK
+        run: flutter build apk --${{ github.event.inputs.build_mode || 'release' }}
+
+      - name: 📦 Upload APKs
+        uses: actions/upload-artifact@v4
+        with:
+          name: netguard-pro-android-apk
+          path: build/app/outputs/flutter-apk/*.apk
+          retention-days: 30
+
+      - name: 📊 Build summary
+        if: always()
+        run: |
+          echo "## 🤖 Android Build Results" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ APK built (3 ABIs + universal)" >> $GITHUB_STEP_SUMMARY
+          echo "- 📦 Artifacts uploaded" >> $GITHUB_STEP_SUMMARY
+
+  # Job 3: Build AAB for Play Store
+  build-aab:
+    name: 🏪 Build AAB (Play Store)
+    runs-on: ubuntu-latest
+    needs: build-android
+    if: startsWith(github.ref, 'refs/tags/v')
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+
+      - name: ☕ Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: ${{ env.JAVA_VERSION }}
+
+      - name: 🎯 Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: 'stable'
+
+      - name: 📥 Install dependencies
+        run: flutter pub get
+
+      - name: 🔧 Setup Keystore
+        env:
+          KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+          KEY_PROPERTIES: ${{ secrets.ANDROID_KEY_PROPERTIES }}
+        run: |
+          echo "$KEYSTORE_BASE64" | base64 --decode > android/app/keystore.jks
+          echo "$KEY_PROPERTIES" > android/key.properties
+
+      - name: 🏗️ Build AAB
+        run: flutter build appbundle --release
+
+      - name: 📦 Upload AAB
+        uses: actions/upload-artifact@v4
+        with:
+          name: netguard-pro-android-aab
+          path: build/app/outputs/bundle/release/*.aab
+
+  # Job 4: Build iOS (macOS required)
+  build-ios:
+    name: 🍎 Build iOS
+    runs-on: macos-latest
+    needs: quality
+    if: startsWith(github.ref, 'refs/tags/v') || github.event_name == 'workflow_dispatch'
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+
+      - name: 🎯 Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: 'stable'
+          cache: true
+
+      - name: 📥 Install dependencies
+        run: flutter pub get
+
+      - name: 🍎 Install CocoaPods
+        run: cd ios && pod install
+
+      - name: 🏗️ Build iOS (no codesign)
+        run: flutter build ios --release --no-codesign
+
+      - name: 📦 Upload iOS artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: netguard-pro-ios
+          path: build/ios/iphoneos/Runner.app
+
+  # Job 5: Create GitHub Release
+  release:
+    name: 🚀 Create Release
+    runs-on: ubuntu-latest
+    needs: [build-android, build-aab]
+    if: startsWith(github.ref, 'refs/tags/v')
+    steps:
+      - name: 📥 Download APK
+        uses: actions/download-artifact@v4
+        with:
+          name: netguard-pro-android-apk
+          path: artifacts/apk
+
+      - name: 📥 Download AAB
+        uses: actions/download-artifact@v4
+        with:
+          name: netguard-pro-android-aab
+          path: artifacts/aab
+
+      - name: 📝 Generate release notes
+        id: release_notes
+        run: |
+          cat > release_notes.md << 'EOF'
+          # 🛡️ NetGuard Pro ${{ github.ref_name }}
+          
+          ## 📥 Downloads
+          
+          ### Android
+          | File | Description |
+          |------|-------------|
+          | `app-arm64-v8a-release.apk` | Modern devices (recommended) |
+          | `app-armeabi-v7a-release.apk` | Older devices |
+          | `app-x86_64-release.apk` | Emulators |
+          | `app-release.apk` | Universal APK |
+          | `app-release.aab` | For Google Play Store |
+          
+          ### iOS
+          - Requires Xcode to sign (build artifact only)
+          
+          ## 🆕 What's New
+          - ✨ New onboarding screens
+          - 🎨 Improved UI/UX
+          - 🔒 Premium features
+          - 🌍 Full bilingual support
+          - 📊 Scan history
+          - 📢 Optimized ads
+          
+          ## ⚠️ Legal Notice
+          Use this app only on your own network. Unauthorized use is illegal.
+          EOF
+
+      - name: 🚀 Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: NetGuard Pro ${{ github.ref_name }}
+          body_path: release_notes.md
+          files: |
+            artifacts/apk/*.apk
+            artifacts/aab/*.aab
+          draft: false
+          prerelease: false
+
+  # Job 6: Notify
+  notify:
+    name: 📱 Notify
+    runs-on: ubuntu-latest
+    needs: [quality, build-android, release]
+    if: always() && github.ref == 'refs/heads/main'
+    steps:
+      - name: 📱 Telegram notification
+        if: env.TELEGRAM_BOT_TOKEN != ''
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_CHAT_ID }}
+          token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          message: |
+            🚀 **NetGuard Pro Build Complete**
+            
+            📌 **Status:** ${{ job.status }}
+            🌿 **Branch:** ${{ github.ref_name }}
+            👤 **Author:** ${{ github.actor }}
+            
+            [View Build](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}

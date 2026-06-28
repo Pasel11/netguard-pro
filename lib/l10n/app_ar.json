@@ -1,0 +1,259 @@
+{
+  "app_name": "NetGuard Pro",
+  "app_tagline": "أداة فحص أمان الشبكات",
+  
+  "nav": {
+    "dashboard": "الرئيسية",
+    "ports": "فحص البورتات",
+    "wps": "حاسبة WPS",
+    "password": "كلمة المرور",
+    "cve": "الثغرات",
+    "router": "كشف الراوتر",
+    "devices": "أجهزة الشبكة",
+    "signal": "تحليل الإشارة",
+    "report": "تقرير الأمان"
+  },
+  
+  "common": {
+    "loading": "جاري التحميل...",
+    "error": "خطأ",
+    "success": "تم بنجاح",
+    "cancel": "إلغاء",
+    "scan": "فحص",
+    "detect": "كشف",
+    "analyze": "تحليل",
+    "generate": "توليد",
+    "download": "تحميل",
+    "language": "English",
+    "retry": "إعادة المحاولة"
+  },
+  
+  "legal": {
+    "warning_title": "تنبيه قانوني",
+    "warning": "استخدم هذه الأداة فقط على شبكتك الخاصة أو بإذن صريح من المالك. الفحص غير المصرّح به لشبكات الآخرين مخالف للقانون."
+  },
+  
+  "dashboard": {
+    "title": "لوحة تحكم أمان الشبكة",
+    "system_active": "النظام يعمل",
+    "connected": "متصل بالإنترنت",
+    "disconnected": "غير متصل",
+    "public_ip": "IP العام",
+    "download_speed": "التنزيل",
+    "latency": "التأخير",
+    "isp": "المزوّد",
+    "geographic_info": "معلومات الموقع الجغرافي",
+    "country": "الدولة",
+    "city": "المدينة",
+    "timezone": "المنطقة الزمنية",
+    "security_score": "درجة أمان الاتصال",
+    "start_scan": "ابدأ فحص الأمان",
+    "scanning": "جاري الفحص...",
+    "quick_actions": "إجراءات سريعة",
+    "secure": "آمن",
+    "medium": "متوسط",
+    "weak": "ضعيف"
+  },
+  
+  "ports": {
+    "title": "فاحص البورتات",
+    "target_ip": "عنوان IP الهدف",
+    "start_scan": "ابدأ الفحص",
+    "scan_progress": "تقدم الفحص",
+    "open": "مفتوحة",
+    "closed": "مغلقة",
+    "total": "الإجمالي",
+    "security_score": "درجة أمان الهدف",
+    "risks": "المخاطر المكتشفة",
+    "recommendations": "التوصيات الأمنية",
+    "scan_time": "توقيت الفحص"
+  },
+  
+  "wps": {
+    "title": "حاسبة WPS PIN",
+    "subtitle": "حساب WPS PIN المتوقع لأشهر الراوترات",
+    "mac_address": "عنوان MAC",
+    "mac_placeholder": "AA:BB:CC:DD:EE:FF",
+    "calculate": "احسب PIN",
+    "calculated_pins": "PINs المحسوبة",
+    "algorithm": "الخوارزمية",
+    "vulnerability": "مستوى الخطورة",
+    "exploit_time": "زمن الاستغلال",
+    "protection": "كيف تحمي شبكتك",
+    "detected_vendor": "المورد المكتشف",
+    "matching_algorithm": "الخوارزمية المطابقة",
+    "expected_pin": "WPS PIN المتوقع"
+  },
+  
+  "password": {
+    "title": "محلّل كلمة مرور WiFi",
+    "enter_password": "اكتب كلمة المرور هنا...",
+    "analyze": "حلّل",
+    "generate_strong": "ولّد كلمة مرور قوية",
+    "strength_score": "درجة القوة",
+    "very_weak": "ضعيفة جداً",
+    "weak": "ضعيفة",
+    "fair": "مقبولة",
+    "strong": "قوية",
+    "very_strong": "قوية جداً",
+    "length": "الطول",
+    "entropy": "الإنتروبيا",
+    "crack_time": "الوقت المتوقع لكسر كلمة المرور",
+    "online_attack": "هجوم Online",
+    "offline_attack": "هجوم Offline (GPU)",
+    "wpa_compatible": "مناسبة لـ WPA2/WPA3",
+    "issues": "مشاكل مكتشفة",
+    "suggestions": "اقتراحات للتحسين"
+  },
+  
+  "cve": {
+    "title": "قاعدة بيانات ثغرات الراوترات",
+    "total": "إجمالي الثغرات",
+    "critical": "حرجة",
+    "high": "عالية",
+    "vendor": "الشركة المصنّعة",
+    "select_vendor": "اختر الشركة",
+    "model": "الموديل",
+    "search": "ابحث عن ثغرات",
+    "show_all": "عرض الكل",
+    "affected_versions": "الإصدارات المتأثرة",
+    "publish_date": "تاريخ النشر",
+    "solution": "الحل"
+  },
+  
+  "router": {
+    "title": "كاشف نوع الراوتر",
+    "router_ip": "عنوان IP الراوتر",
+    "detect": "كشف",
+    "detected": "تم الكشف",
+    "not_detected": "تعذّر الكشف",
+    "model": "الموديل",
+    "firmware": "الفيرموير",
+    "security_headers": "رؤوس الأمان",
+    "notes": "ملاحظات أمنية"
+  },
+  
+  "devices": {
+    "title": "فاحص أجهزة الشبكة",
+    "scan_network": "افحص الشبكة",
+    "found": "الأجهزة المكتشفة",
+    "ip": "IP",
+    "mac": "MAC",
+    "vendor": "الشركة المصنّعة",
+    "type": "النوع",
+    "unknown": "غير معروف"
+  },
+  
+  "signal": {
+    "title": "محلل إشارة WiFi",
+    "subtitle": "تحليل قوة إشارة WiFi والقنوات",
+    "signal_quality": "جودة الإشارة",
+    "signal_strength": "قوة الإشارة",
+    "channel": "القناة",
+    "frequency": "التردد",
+    "network_type": "نوع الشبكة",
+    "downlink": "سرعة التنزيل",
+    "recommendation": "التوصية",
+    "tips": "نصائح لتحسين الإشارة",
+    "analyze": "ابدأ التحليل"
+  },
+  
+  "report": {
+    "title": "مولّد تقرير الأمان",
+    "subtitle": "تقرير شامل عن أمان شبكتك",
+    "generate": "ولّد التقرير",
+    "summary": "ملخص التقرير",
+    "final_score": "الدرجة النهائية",
+    "total_vulns": "إجمالي الثغرات",
+    "open_ports": "البورتات المفتوحة",
+    "recommendations_count": "التوصيات",
+    "download_pdf": "تحميل PDF",
+    "conclusion": "الخلاصة"
+  },
+  
+  "ads": {
+    "sponsored": "محتوى مدعوم",
+    "loading_ad": "جاري تحميل الإعلان...",
+    "watch_ad_for": "شاهد إعلان للحصول على",
+    "remove_ads": "إزالة الإعلانات"
+  },
+  
+  "onboarding": {
+    "welcome_title": "أهلاً بك في NetGuard Pro",
+    "welcome_desc": "تطبيق احترافي لفحص أمان شبكات WiFi - اجعل شبكتك أكثر أماناً اليوم",
+    "features_title": "9 أدوات قوية",
+    "features_desc": "فحص البورتات، حساب WPS PIN، تحليل كلمات المرور، كشف الثغرات، وأكثر",
+    "legal_title": "استخدام مسؤول",
+    "legal_desc": "استخدم التطبيق فقط على شبكتك الخاصة. الاستخدام غير المصرّح به مخالف للقانون"
+  },
+  
+  "common": {
+    "loading": "جاري التحميل...",
+    "error": "خطأ",
+    "success": "تم بنجاح",
+    "cancel": "إلغاء",
+    "scan": "فحص",
+    "detect": "كشف",
+    "analyze": "تحليل",
+    "generate": "توليد",
+    "download": "تحميل",
+    "language": "English",
+    "retry": "إعادة المحاولة",
+    "back": "رجوع",
+    "next": "التالي",
+    "skip": "تخطي",
+    "get_started": "ابدأ الآن",
+    "share": "مشاركة",
+    "copy_pin": "نسخ PIN",
+    "confirm": "تأكيد"
+  },
+  
+  "settings": {
+    "appearance": "المظهر",
+    "theme": "الثيم",
+    "dark": "داكن",
+    "light": "فاتح",
+    "system": "النظام",
+    "language": "اللغة",
+    "arabic": "العربية",
+    "english": "English",
+    "security": "الأمان",
+    "notifications": "الإشعارات",
+    "biometric_lock": "القفل البيومتري",
+    "data": "البيانات",
+    "scan_history": "سجل الفحوصات",
+    "scans": "فحص",
+    "clear_cache": "مسح الكاش",
+    "clear_cache_confirm": "هل تريد مسح البيانات المؤقتة؟",
+    "cache_cleared": "تم مسح الكاش",
+    "clear_history": "مسح السجل",
+    "clear_history_confirm": "هل تريد مسح كل سجل الفحوصات؟ لا يمكن التراجع.",
+    "history_cleared": "تم مسح السجل",
+    "about": "حول",
+    "version": "الإصدار",
+    "open_source": "مفتوح المصدر",
+    "privacy_policy": "سياسة الخصوصية",
+    "terms": "الشروط والأحكام",
+    "premium_active": "Premium مفعّل",
+    "thank_you": "شكراً لدعمك!",
+    "upgrade_premium": "ترقية إلى Premium",
+    "premium_benefits": "افتح كل الميزات المتقدمة، فحص غير محدود، بدون إعلانات",
+    "start_trial": "ابدأ تجربة 7 أيام",
+    "buy_now": "اشترك الآن",
+    "upgrade": "ترقية"
+  },
+  
+  "history": {
+    "title": "سجل الفحوصات",
+    "empty": "لا توجد فحوصات بعد",
+    "empty_desc": "ابدأ بفحص شبكتك وستظهر النتائج هنا"
+  },
+  
+  "wps": {
+    "mac_hint": "تقدر تلاقي MAC راوترك في خلفية الجهاز أو صفحة الإعدادات",
+    "premium_required": "بعض الميزات تتطلب Premium",
+    "all_algorithms_premium": "كل الخوارزميات",
+    "unlock_all": "افتح جميع الخوارزميات الـ8 مع Premium",
+    "algorithms": "خوارزميات"
+  }
+}
