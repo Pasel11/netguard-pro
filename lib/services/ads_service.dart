@@ -1,6 +1,5 @@
 import 'package:flutter/foundation.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:unity_ads_plugin/unity_ads_plugin.dart';
 
 class AdsService {
   // ===== Google AdMob IDs =====
@@ -29,7 +28,7 @@ class AdsService {
       await MobileAds.instance.initialize();
       
       // Initialize Unity Ads
-      UnityAds.init(
+      // Unity Ads removed - not available on pub.dev
         gameId: _unityGameId,
         testMode: kDebugMode,
         onComplete: () => debugPrint('Unity Ads initialized'),
@@ -109,7 +108,7 @@ class AdsService {
       _interstitialAd!.show();
     } else {
       // Try Unity Ads interstitial
-      UnityAds.showAd(
+      // Unity Ads removed
         placementId: _unityInterstitialPlacement,
         onComplete: (placementId) => onComplete(),
         onSkipped: (placementId) => onComplete(),
@@ -159,7 +158,7 @@ class AdsService {
       });
     } else {
       // Try Unity Ads rewarded
-      UnityAds.showAd(
+      // Unity Ads removed
         placementId: _unityRewardedPlacement,
         onComplete: (placementId) {
           onReward();
