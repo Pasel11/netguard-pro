@@ -65,8 +65,7 @@ dependencies:
   
   # ===== Permissions & Info =====
   permission_handler: ^11.1.0
-  device_info_plus: ^9.1.1
-  network_info_plus: ^4.1.0
+  # device_info_plus, network_info_plus, package_info_plus are already declared in Network section
   package_info_plus: ^5.0.1
   
   # ===== URL Launcher =====
