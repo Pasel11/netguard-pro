@@ -13,8 +13,6 @@ class AdsService {
   // استبدل هذه من https://dashboard.unity3d.com
   static const String _unityGameId = 'XXXXXXXXXX';
   static const String _unityBannerPlacement = 'Banner_Ad';
-  static const String _unityInterstitialPlacement = 'Interstitial_Ad';
-  static const String _unityRewardedPlacement = 'Rewarded_Ad';
   
   static bool _initialized = false;
   static bool _adsRemoved = false;
@@ -101,13 +99,8 @@ class AdsService {
       );
       _interstitialAd!.show();
     } else {
-      // Try Unity Ads interstitial
-      // Unity Ads removed
-        placementId: _unityInterstitialPlacement,
-        onComplete: (placementId) => onComplete(),
-        onSkipped: (placementId) => onComplete(),
-        onFailed: (placementId, error, message) => onComplete(),
-      );
+      // Unity Ads removed - just call onComplete
+      onComplete();
     }
   }
   
@@ -151,16 +144,8 @@ class AdsService {
         onReward();
       });
     } else {
-      // Try Unity Ads rewarded
-      // Unity Ads removed
-        placementId: _unityRewardedPlacement,
-        onComplete: (placementId) {
-          onReward();
-          onComplete();
-        },
-        onSkipped: (placementId) => onComplete(),
-        onFailed: (placementId, error, message) => onComplete(),
-      );
+      // Unity Ads removed - just call onComplete
+      onComplete();
     }
   }
 }

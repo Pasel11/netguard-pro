@@ -5,7 +5,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 import 'package:netguard_pro/l10n/app_localizations.dart';
 import 'package:netguard_pro/providers/theme_provider.dart';
-import 'package:netguard_pro/providers/locale_provider.dart';
+import 'package:netguard_pro/l10n/app_localizations.dart';
 import 'package:netguard_pro/providers/premium_provider.dart';
 import 'package:netguard_pro/providers/history_provider.dart';
 import 'package:netguard_pro/utils/theme.dart';
